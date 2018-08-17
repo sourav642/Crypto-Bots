@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import scrapy
 import csv
 from os import path
