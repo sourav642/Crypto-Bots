@@ -16,7 +16,7 @@ Pre requisites:
 # Basic Tutorial
 
 There are 8 spiders present in the spiders folder.To run the code simply enter into the project webscrapper and open terminal.
-Type "scrapy crawl _Spidername _without_extension" and press enter.(ignore the quotes)
+Type "scrapy crawl Spidername _without_extension" and press enter.(ignore the quotes)
 
 A csv file with the same name as that of the spider containing the data will automatically get created.
 
