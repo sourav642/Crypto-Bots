@@ -40,19 +40,20 @@ class BitfinexBotSpider(scrapy.Spider):
         time.sleep(5)
         result=dict()
         i=0
-        while self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[2]').text != "BCHUSD":
+        while self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[2]/div').text != "BCHUSD":
             i+=1
+        
         result['Datetime']=datetime.datetime.now()
 
-        result['Last Current price']=self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[3]').text
+        result['Last Current price']=self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[3]/div').text
 
-        result['24 Hr Price Change']=self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[4]').text
+        result['24 Hr Price Change']=self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[4]/div').text
 
-        result['24 Hr High Price']=self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[5]').text
+        result['24 Hr High Price']=self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[5]/div').text
 
-        result['24 Hr Low Price']= self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[6]').text
+        result['24 Hr Low Price']= self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[6]/div').text
 
-        result['24 Hr Volume']= self.driver.find_element_by_xpath('//*[@id="fav-ticker-list-table"]/tbody/tr['+str(i+1)+']/td[7]/span/span[1]').text
+        result['24 Hr Volume']= self.driver.find_element_by_xpath('//*[@id="tickers-landing-container"]/div/div/div[3]/div/div[1]/div/div/div[2]/div/div['+str(i+1)+']/div[7]/div').text
 
         result['Coins']= "Bitcoin Cash"#self.driver.find_element_by_xpath('').text
 
