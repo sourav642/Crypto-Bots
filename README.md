@@ -1,4 +1,4 @@
-# Data-scrapper
+# Crypto-Bots
 
 Pre requisites:
 
